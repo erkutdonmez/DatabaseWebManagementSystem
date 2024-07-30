@@ -1,0 +1,37 @@
+﻿@page
+@model DatabaseWebInterface.Pages.MyOrder.IndexModel
+@{
+}
+
+<br>
+<h2>List Of Orders</h2>
+<a class='btn btn-primary btn-sm' href='/MyOrder/Create'>New Order</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>OrderID</th>
+            <th>OrderDate</th>
+            <th>EmployeeID</th>
+            <th>CustomerID</th>
+            <th>ProductID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listMyOrder)
+        {
+            <tr>
+                <td>@item.OrderID</td>
+                <td>@item.OrderDate</td>
+                <td>@item.EmployeeID</td>
+                <td>@item.CustomerID</td>
+                <td>@item.ProductID</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/MyOrder/Delete?id=@item.OrderID">Delete</a>
+
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

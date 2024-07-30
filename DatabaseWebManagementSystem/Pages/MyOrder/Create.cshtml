@@ -1,0 +1,62 @@
+﻿@page
+@model DatabaseWebInterface.Pages.MyOrder.CreateModel
+@{
+}
+
+<br>
+<h2>New Order</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+}
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">OrderDate</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="date" value="@Model.myOrderInfo.OrderDate">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">EmployeeID</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="eid" value="@Model.myOrderInfo.EmployeeID">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">CustomerID</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="cid" value="@Model.myOrderInfo.CustomerID">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">ProductID</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="pid" value="@Model.myOrderInfo.ProductID">
+        </div>
+    </div>
+    
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    <strong>@Model.successMessage</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outlialign-primary" href="/" role="button">Cancel</a>
+        </div>
+    </div>
+</form>
