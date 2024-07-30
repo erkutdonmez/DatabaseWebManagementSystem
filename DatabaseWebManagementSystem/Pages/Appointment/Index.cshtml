@@ -1,0 +1,37 @@
+﻿@page
+@model DatabaseWebInterface.Pages.Appointment.IndexModel
+@{
+}
+<br>
+<h2>Appointments</h2>
+<a class='btn btn-primary btn-sm' href='/Appointment/Create'>New Appointment</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>AppointmentID</th>
+            <th>AppointmentDate</th>
+            <th>AppointmentHour</th>
+            <th>CustomerID</th>
+            <th>ServiceID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listAppointment)
+        {
+            <tr>
+                <td>@item.AppointmentID</td>
+                <td>@item.AppointmentDate</td>
+                <td>@item.AppointmentHour</td>
+                <td>@item.CustomerID</td>
+                <td>@item.ServiceID</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Appointment/Edit?id=@item.AppointmentID">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="/Appointment/Delete?id=@item.AppointmentID">Delete</a>
+
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
