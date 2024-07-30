@@ -1,1 +1,32 @@
-
+@page
+@model DatabaseWebInterface.Pages.Warehouse.warehouseModel
+@{
+}
+<br>
+<h2>Warehouse</h2>
+<!-- <a class='btn btnalert-primary btn-sm' href='/Warehouse/Create'>New Warehouse</a> -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>WarehouseCity</th>
+            <th>WarehouseDistrict</th>
+            <th>WarehouseNeighbourhood</th>
+            <th>WarehouseStreet</th>
+            <th>WarehouseBuildingNumber</th>
+            <th>WarehouseApartmentNumber</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listWarehouse)
+        {
+            <tr>
+                <td>@item.WarehouseCity</td>
+                <td>@item.WarehouseDistrict</td>
+                <td>@item.WarehouseNeighbourhood</td>
+                <td>@item.WarehouseStreet</td>
+                <td>@item.WarehouseBuildingNumber</td>
+                <td>@item.WarehouseApartmentNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>
